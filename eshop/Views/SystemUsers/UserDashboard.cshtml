@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "UserDashboard";
+}
+
+<h1 class="text-center alert alert-success">User Dashboard</h1>
+
+<p>
+    <a asp-action="Index">View All Users</a>
+</p>
+
+
+<li><a asp-area="" asp-controller="SystemCategories" asp-action="create">Add new Category</a></li>
+<li><a asp-area="" asp-controller="SystemCategories" asp-action="index">View all categories</a></li>
+<li><a asp-area="" asp-controller="SystemItems" asp-action="index">View all Items</a></li>
+<ul class="nav navbar-nav">
+    <li>
+        <a asp-area="" asp-controller="SystemUsers" asp-action="Login">Logout</a>
+    </li>
+
+</ul>
+

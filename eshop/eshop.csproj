@@ -6,8 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="GitHub" Version="1.14.1" />
+    <PackageReference Include="GitHubSync" Version="0.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+    <PackageReference Include="Nancy.Session.RethinkDB" Version="0.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\SystemData\ProfilePictures\" />
   </ItemGroup>
 
 </Project>

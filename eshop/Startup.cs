@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using eshop.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using eshop.Models;
 
 namespace eshop
 {
@@ -37,8 +38,13 @@ namespace eshop
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<eshopContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("eShopDBCS")));
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddSession();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -60,8 +66,10 @@ namespace eshop
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            
 
             app.UseAuthentication();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
